@@ -148,7 +148,7 @@ float calculateMagicNumber(bool isMagic, int ingredient1, float ingredient2, dou
 /*
  5)
  */
-double phoneNumberLookup(char lastInitial, int iD = 0000000)
+double lookupPhoneNumber(char lastInitial, int iD = 0000000)
 {
     ignoreUnused(lastInitial, iD);
     return {};
@@ -180,7 +180,7 @@ char calculateGrade(float exam1, float exam2, float exam3, float extraCredit = 0
 /* 
  9)
  */
-int meleeAttack(int attackRating, int weaponBonus, float buff = 0)
+int performMeleeAttack(int attackRating, int weaponBonus, float buff = 0)
 {
     ignoreUnused(attackRating, weaponBonus, buff);
     return {};
@@ -221,7 +221,7 @@ int main()
     //4)
     auto magicOutput = calculateMagicNumber(true, 50, 6000, 130592);
     //5) 
-    auto bobBlueberriesNumber = phoneNumberLookup('B', 12345);
+    auto bobBlueberriesNumber = lookupPhoneNumber('B', 12345);
     //6)
     auto basementRemodelEstimate = calculateEstimate(40, 3);
     //7)
@@ -229,7 +229,7 @@ int main()
     //8)
     auto bobBlueberriesFinalGrade = calculateGrade(40.71f, 71.25f, 80.2f, 50.0f);
     //9)
-    auto damageDealt = meleeAttack(72, 15, 0);
+    auto damageDealt = performMeleeAttack(72, 15, 0);
     //10)
     auto salesTax = calculateTax(352.72f, 48, true);
     
