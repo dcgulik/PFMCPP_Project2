@@ -16,13 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
+ int
+ bool
+ float
+ double
+ char
+ wchar_t
+  
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -64,10 +64,43 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int anotherNumber = 3;
+
+    int yetAnotherNumber = 4;
+
+    bool isLawnMowed = false;
+
+    bool isBabyAwake = true;
+
+    bool hotOutside = true;
+
+    float floatNumber = 1.20f;
+
+    float anotherFloatNumber = 1.21f;
+
+    float yetAnotherFloatNumber = 1.22f;
+
+    double doubleNumber = -200;
+
+    double anotherDoubleNumber = 200;
+
+    double yetAnotherDoubleNumber = 20000000;
+
+    char exampleChar = 'a';
+
+    char anotherExampleChar = 'b';
+
+    char yetAnotherExampleChar = 'c';
+
+
+
+
+
+    
     
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, anotherNumber, yetAnotherNumber, isLawnMowed, isBabyAwake, hotOutside, floatNumber, anotherFloatNumber, yetAnotherFloatNumber, doubleNumber, anotherDoubleNumber, yetAnotherDoubleNumber, exampleChar, anotherExampleChar, yetAnotherExampleChar); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,43 +117,82 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+bool launchMissile(int power, float angle = 0.0f)
+{
+    ignoreUnused(power, angle);
+    return {};
+}
 /*
  2)
  */
-
+int popGrowthRate(long population, float birthRate = 0.3f)
+{
+    ignoreUnused(population, birthRate);
+    return {};
+}
 /*
  3)
  */
-
+void distortGuitar(bool bypass, int filter = 6, int dist = 6, int output = 6)
+{
+    ignoreUnused(bypass, filter, dist, output);
+}
 /*
  4)
  */
-
+float calculateMagicNumber(bool isMagic, int ingredient1, float ingredient2, double ingredient3)
+{
+    ignoreUnused(isMagic, ingredient1, ingredient2, ingredient3);
+    return {};
+}
 /*
  5)
  */
-
+double lookupPhoneNumber(char lastInitial, int iD = 0000000)
+{
+    ignoreUnused(lastInitial, iD);
+    return {};
+}
 /*
  6)
  */
-
+float calculateEstimate(int hoursWorked, int noOfLaborers, bool holidayPay = false)
+{
+    ignoreUnused(hoursWorked, noOfLaborers, holidayPay);
+    return {};
+}
 /*
  7)
  */
-
+double generateColorID(int r = 50, int g = 50, int b = 50)
+{
+    ignoreUnused(r, g, b);
+    return {};
+}
 /*
  8)
  */
-
-/*
+char calculateGrade(float exam1, float exam2, float exam3, float extraCredit = 0.0f)
+{
+    ignoreUnused(exam1, exam2, exam3, extraCredit);
+    return {};
+}
+/* 
  9)
  */
-
+int performMeleeAttack(int attackRating, int weaponBonus, float buff = 0)
+{
+    ignoreUnused(attackRating, weaponBonus, buff);
+    return {};
+}
 /*
  10)
  */
-
+float calculateTax(float total, int stateCode, bool isExempt = false)
+{
+    ignoreUnused(total, stateCode, isExempt);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +213,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto blastReport = launchMissile(50, 45.53f);
     //2)
-    
+    auto ecuadorPopulationGrowth = popGrowthRate(4000000, 1.6f);
     //3)
-    
+    distortGuitar(false, 3, 7, 8);
     //4)
-    
-    //5)
-    
+    auto magicOutput = calculateMagicNumber(true, 50, 6000, 130592);
+    //5) 
+    auto bobBlueberriesNumber = lookupPhoneNumber('B', 12345);
     //6)
-    
+    auto basementRemodelEstimate = calculateEstimate(40, 3);
     //7)
-    
+    auto mauveID = generateColorID(224, 176, 255);
     //8)
-    
+    auto bobBlueberriesFinalGrade = calculateGrade(40.71f, 71.25f, 80.2f, 50.0f);
     //9)
-    
+    auto damageDealt = performMeleeAttack(72, 15, 0);
     //10)
+    auto salesTax = calculateTax(352.72f, 48, true);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, blastReport, ecuadorPopulationGrowth, magicOutput, bobBlueberriesNumber, damageDealt, basementRemodelEstimate, mauveID, bobBlueberriesFinalGrade, salesTax);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
