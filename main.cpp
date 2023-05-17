@@ -125,22 +125,22 @@ bool launchMissile(int power, float angle = 0.0f)
 /*
  2)
  */
-int mowLawn(bool mowerHasGas, int beersNeeded = 3)
+int popGrowthRate(long population, float birthRate = 0.3f)
 {
-    ignoreUnused(mowerHasGas, beersNeeded);
+    ignoreUnused(population, birthRate);
     return {};
 }
 /*
  3)
  */
-void guitarDistortion(bool bypass, int filter = 6, int dist = 6, int output = 6)
+void distortGuitar(bool bypass, int filter = 6, int dist = 6, int output = 6)
 {
     ignoreUnused(bypass, filter, dist, output);
 }
 /*
  4)
  */
-float magicNumber(bool isMagic, int ingredient1, float ingredient2, double ingredient3)
+float calculateMagicNumber(bool isMagic, int ingredient1, float ingredient2, double ingredient3)
 {
     ignoreUnused(isMagic, ingredient1, ingredient2, ingredient3);
     return {};
@@ -164,7 +164,7 @@ float calculateEstimate(int hoursWorked, int noOfLaborers, bool holidayPay = fal
 /*
  7)
  */
-double calculateColorID(int r = 50, int g = 50, int b = 50)
+double generateColorID(int r = 50, int g = 50, int b = 50)
 {
     ignoreUnused(r, g, b);
     return {};
@@ -177,12 +177,13 @@ char calculateGrade(float exam1, float exam2, float exam3, float extraCredit = 0
     ignoreUnused(exam1, exam2, exam3, extraCredit);
     return {};
 }
-/*
+/* 
  9)
  */
-void bakePizza(int pizzas = 1, int temperature = 425)
+int meleeAttack(int attackRating, int weaponBonus, float buff = 0)
 {
-    ignoreUnused(pizzas, temperature);
+    ignoreUnused(attackRating, weaponBonus, buff);
+    return {};
 }
 /*
  10)
@@ -214,25 +215,25 @@ int main()
     //1)
     auto blastReport = launchMissile(50, 45.53f);
     //2)
-    auto totalFeetMowed = mowLawn(true, 6);
+    auto ecuadorPopulationGrowth = popGrowthRate(4000000, 1.6f);
     //3)
-    guitarDistortion(false, 3, 7, 8);
+    distortGuitar(false, 3, 7, 8);
     //4)
-    auto magicOutput = magicNumber(true, 50, 6000, 130592);
-    //5)
+    auto magicOutput = calculateMagicNumber(true, 50, 6000, 130592);
+    //5) 
     auto bobBlueberriesNumber = phoneNumberLookup('B', 12345);
     //6)
     auto basementRemodelEstimate = calculateEstimate(40, 3);
     //7)
-    auto mauveID = calculateColorID(224, 176, 255);
+    auto mauveID = generateColorID(224, 176, 255);
     //8)
     auto bobBlueberriesFinalGrade = calculateGrade(40.71f, 71.25f, 80.2f, 50.0f);
     //9)
-    bakePizza();
+    auto damageDealt = meleeAttack(72, 15, 0);
     //10)
     auto salesTax = calculateTax(352.72f, 48, true);
     
-    ignoreUnused(carRented, blastReport, totalFeetMowed, magicOutput, bobBlueberriesNumber, basementRemodelEstimate, mauveID, bobBlueberriesFinalGrade, salesTax);
+    ignoreUnused(carRented, blastReport, ecuadorPopulationGrowth, magicOutput, bobBlueberriesNumber, damageDealt, basementRemodelEstimate, mauveID, bobBlueberriesFinalGrade, salesTax);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
